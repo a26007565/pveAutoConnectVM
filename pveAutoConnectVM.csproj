@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <PackageId>pveAutoConnectVM</PackageId>
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>pveAutoConnectVM</ToolCommandName>
+    <Version>1.0.1</Version>
+    <Authors>Weiting</Authors>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>PVE Auto Connect VM</Description>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <PackageLicenseExpression></PackageLicenseExpression>
+    <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
+    <DockerfileContext>.</DockerfileContext>
+    <RepositoryUrl>https://github.com/a26007565/pveAutoConnectVM</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="LICENSE.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommandLineParser" Version="2.8.0" />
+    <PackageReference Include="Corsinvest.ProxmoxVE.Api" Version="2.8.1" />
+    <PackageReference Include="Corsinvest.ProxmoxVE.Api.Extension" Version="2.8.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.13" />
+  </ItemGroup>
+
+</Project>
