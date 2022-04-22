@@ -8,17 +8,20 @@
     <ToolCommandName>pveAutoConnectVM</ToolCommandName>
     <Version>1.0.1</Version>
     <Authors>Weiting</Authors>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>PVE Auto Connect VM</Description>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <PackageLicenseExpression></PackageLicenseExpression>
     <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
     <DockerfileContext>.</DockerfileContext>
-    <RepositoryUrl>https://github.com/a26007565/pveAutoConnectVM</RepositoryUrl>
+    <RepositoryUrl>https://github.com/weiting-tw/pveAutoConnectVM</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
     <None Include="LICENSE.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="README.md">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>

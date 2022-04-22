@@ -1,0 +1,32 @@
+name: Publish
+on:
+  release:
+    types: [ published ]
+
+env:
+  CONFIGURATION: Release
+  DOTNET_CORE_VERSION: 6.0.x
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+
+    - name: Setup dotnet
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: ${{ env.DOTNET_CORE_VERSION }}
+    
+    - name: Restore
+      run: dotnet restore
+    
+    - name: Build
+      run: dotnet build --configuration ${{ env.CONFIGURATION }} --no-restore
+
+    - name: Package
+      run: dotnet pack -c Release -o package
+
+    - name: Publish the package to nuget.org
+      run: dotnet nuget push ./package/*.nupkg -k $NUGET_AUTH_TOKEN --source nuget.org --skip-duplicate
+      env:
+        NUGET_AUTH_TOKEN: ${{ secrets.NUGET_TOKEN }}
