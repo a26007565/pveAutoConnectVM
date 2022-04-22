@@ -3,7 +3,7 @@
 ## Command Info
 
 ```bash
-pveAutoConnectVM 1.0.1
+pveAutoConnectVM 1.1.1
 Copyright (C) 2021 Weiting
 
   -h, --host        Required. Server Url
