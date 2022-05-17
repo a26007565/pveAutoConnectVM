@@ -6,7 +6,7 @@
     <PackageId>pveAutoConnectVM</PackageId>
     <PackAsTool>true</PackAsTool>
     <ToolCommandName>pveAutoConnectVM</ToolCommandName>
-    <Version>1.1.1</Version>
+    <Version>1.1.2</Version>
     <Authors>Weiting</Authors>
     <Description>PVE Auto Connect VM</Description>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>

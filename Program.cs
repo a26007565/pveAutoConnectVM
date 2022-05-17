@@ -35,9 +35,18 @@ namespace pveAutoConnectVM
                         return;
                     }
 
+                    if (option.isDebugger)
+                    {
+                        Console.WriteLine($"Connect to PVE[{option.Host}] with {option.Username}");
+                    }
+
                     foreach (var vm in client.GetVMs())
                     {
                         vm.LxcApi.Vncproxy.CreateRest();
+                        if (option.isDebugger)
+                        {
+                            Console.WriteLine($"Connect to [{vm.Node}]'s VM {vm.Name} ...{vm.Status}");
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -50,17 +59,20 @@ namespace pveAutoConnectVM
 
         private class Options
         {
-            [Option('h', "host", Required = true, HelpText = "Server Url")]
+            [Option('h', "host", Required = true, HelpText = "Server Url.")]
             public string Host { get; set; }
 
-            [Option("port", HelpText = "Server Port [443]")]
+            [Option("port", HelpText = "Server Port. like 443")]
             public int Port { get; set; } = 443;
 
-            [Option('u', "username", Required = true, HelpText = "Your account")]
+            [Option('u', "username", Required = true, HelpText = "Your account.")]
             public string Username { get; set; }
 
-            [Option('p', "password", Required = true, HelpText = "Your password")]
+            [Option('p', "password", Required = true, HelpText = "Your password.")]
             public string Password { get; set; }
+
+            [Option('d', "debugger", HelpText = "Show detail message.")]
+            public bool isDebugger { get; set; }
         }
 
     }

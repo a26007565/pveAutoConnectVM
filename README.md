@@ -3,16 +3,18 @@
 ## Command Info
 
 ```bash
-pveAutoConnectVM 1.1.1
+pveAutoConnectVM 1.1.2
 Copyright (C) 2021 Weiting
 
-  -h, --host        Required. Server Url
+  -h, --host        Required. Server Url.
 
-  --port            Server Port [443]
+  --port            Server Port. like 443
 
-  -u, --username    Required. Your account
+  -u, --username    Required. Your account.
 
-  -p, --password    Required. Your password
+  -p, --password    Required. Your password.
+
+  -d, --debugger    Show detail message.
 
   --help            Display this help screen.
 
